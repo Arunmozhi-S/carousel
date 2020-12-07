@@ -1,0 +1,32 @@
+export const pictures = [
+  {
+    id: 0,
+    image: "images/cup.jpg",
+    alt: "Cup",
+  },
+  {
+    id: 1,
+    image: "images/bike.jpg",
+    alt: "Bike",
+  },
+  {
+    id: 2,
+    image: "images/horse.jpg",
+    alt: "Horse",
+  },
+  {
+    id: 3,
+    image: "images/football.jpg",
+    alt: "Football",
+  },
+  {
+    id: 4,
+    image: "images/car.jpg",
+    alt: "Car",
+  },
+  {
+    id: 5,
+    image: "images/lion.jpg",
+    alt: "Lion",
+  },
+];
