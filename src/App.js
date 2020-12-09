@@ -8,7 +8,11 @@ import { pictures } from "./components/pictures";
 // </div>
 
 function App() {
-  return <Carousel slides={pictures} />;
+  return (
+    <div className="body">
+      <Carousel slides={pictures} />
+    </div>
+  );
 }
 
 export default App;
