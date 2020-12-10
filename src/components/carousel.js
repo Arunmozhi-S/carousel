@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import axios from "axios";
 
-const Carousel = ({ slides }) => {
+const Carousel = () => {
   const [present, setPresent] = useState(0);
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    axios.get("pictures.json").then((res) => {
+      setSlides(res.data);
+    });
+
+    console.log(slides);
+  }, [slides]);
 
   const nextImage = () => {
     setPresent(present === slides.length - 1 ? 0 : present + 1);
@@ -12,7 +22,7 @@ const Carousel = ({ slides }) => {
     setPresent(present === 0 ? slides.length - 1 : present - 1);
   };
 
-  return slides.length ? (
+  return (
     <div className="slider">
       <FaArrowAltCircleLeft className="left" onClick={prevImage} />
       <FaArrowAltCircleRight className="right" onClick={nextImage} />
@@ -27,7 +37,7 @@ const Carousel = ({ slides }) => {
         </div>
       ))}
     </div>
-  ) : null;
+  );
 };
 
 export default Carousel;
