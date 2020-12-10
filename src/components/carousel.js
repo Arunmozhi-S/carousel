@@ -7,12 +7,8 @@ const Carousel = () => {
   const [slides, setSlides] = useState([]);
 
   useEffect(() => {
-    axios.get("pictures.json").then((res) => {
-      setSlides(res.data);
-    });
-
-    console.log(slides);
-  }, [slides]);
+    axios.get("pictures.json").then((res) => setSlides(res.data));
+  }, []);
 
   const nextImage = () => {
     setPresent(present === slides.length - 1 ? 0 : present + 1);
